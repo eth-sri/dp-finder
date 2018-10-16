@@ -105,11 +105,11 @@ root@febda6ac8a18:/implementation# python3 dpfinder/searcher/search.py --help
 
 ## Contributors
 
-* [Benjamin Bichsel](https://www.sri.inf.ethz.ch/beni.php) benjamin.bichsel@inf.ethz.ch
-* [Timon Gehr](https://www.sri.inf.ethz.ch/tg.php) timon.gehr@inf.ethz.ch
-* [Dana Drachsler Cohen](https://www.sri.inf.ethz.ch/dana.php) dana.drachsler@inf.ethz.ch
+* [Benjamin Bichsel](https://www.sri.inf.ethz.ch/people/benjamin) benjamin.bichsel@inf.ethz.ch
+* [Timon Gehr](https://www.sri.inf.ethz.ch/people/timon) timon.gehr@inf.ethz.ch
+* [Dana Drachsler Cohen](https://www.sri.inf.ethz.ch/people/dana) dana.drachsler@inf.ethz.ch
 * [Petar Tsankov](http://www.ptsankov.com/) petar.tsankov@inf.ethz.ch
-* [Martin Vechev](https://www.sri.inf.ethz.ch/vechev.php) martin.vechev@inf.ethz.ch
+* [Martin Vechev](https://www.sri.inf.ethz.ch/people/martin) martin.vechev@inf.ethz.ch
 
 
 ## License and Copyright
