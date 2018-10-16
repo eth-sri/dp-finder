@@ -3,7 +3,7 @@
 DP-Finder is a system that automatically derives lower bounds on the differential privacy enforced
 by algorithms.
 
-This repository contains the code used for the experiments in the paper [XX](https://www.sri.inf.ethz.ch/papers/XX).
+This repository contains the code used for the experiments in the paper [https://www.sri.inf.ethz.ch/papers/ccs18-dpfinder.pdf](https://www.sri.inf.ethz.ch/papers/ccs18-dpfinder.pdf).
 
 
 ## Setup
@@ -67,7 +67,7 @@ root@febda6ac8a18:/implementation# ./run.sh
 ```
 
 The runner generates plots, which are saved in [./dpfinder/log_parser/figures](./dpfinder/log_parser/figures).
-The runtime of this script depends on your machine (XX).
+The runtime of this script depends on your machine (expect <1day).
 
 ### Running DP-Finder on a single algorithm
 
@@ -84,9 +84,23 @@ root@febda6ac8a18:/implementation# python3 dpfinder/searcher/search.py --help
 ## Citing This Framework
 
 ```
-@inproceedings{
-  XX
-}
+@inproceedings{Bichsel:2018:DFD:3243734.3243863,
+ author = {Bichsel, Benjamin and Gehr, Timon and Drachsler-Cohen, Dana and Tsankov, Petar and Vechev, Martin},
+ title = {DP-Finder: Finding Differential Privacy Violations by Sampling and Optimization},
+ booktitle = {Proceedings of the 2018 ACM SIGSAC Conference on Computer and Communications Security},
+ series = {CCS '18},
+ year = {2018},
+ isbn = {978-1-4503-5693-0},
+ location = {Toronto, Canada},
+ pages = {508--524},
+ numpages = {17},
+ url = {http://doi.acm.org/10.1145/3243734.3243863},
+ doi = {10.1145/3243734.3243863},
+ acmid = {3243863},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {differential privacy, lower bounds, optimization, sampling},
+} 
 ```
 
 ## Contributors
