@@ -103,7 +103,8 @@ def analyse_data(ps: List[Parser]):
 
 		# FINAL RESULT
 
-		print("\tBest values:", -np.sort(-eps_opt)[:5])
+		print("\tBest random values:", -np.sort(-eps_rand)[:5])
+		print("\tBest optimized values:", -np.sort(-eps_opt)[:5])
 
 		# TIMING
 		time_rand = p.get_random_time()
@@ -154,15 +155,17 @@ def plot_n_samples(ps: List[Parser]):
 		[[min(n_samples), max(n_samples)]],
 		font_size=font_size,
 		y_axis_formatter=get_latex_formatter(),
-		y_axis_logscale=True)
-	pl.plot(data, labels, sublabels, y_label='number of samples (logscale)')
+		y_axis_logscale=True,
+		figsize=(6.4, 0.7*4.8))
+	fig = pl.plot(data, labels, sublabels, y_label='number of samples (logscale)')
+	# print(fig.get_size_inches())
 	plt.savefig(os.path.join(dir_path, 'figures/n_samples.pdf'), bbox_inches='tight')
 	plt.clf()
 
 
 def plot_times(ps: List[Parser]):
 	matplotlib.rcParams.update({'font.size': font_size})
-	plt.figure(frameon=False)
+	fig = plt.figure(frameon=False, figsize=(6.4, 0.7*4.8))
 
 	times_rand = [np.average(p.get_random_time()) for p in ps]
 	times_opt = [np.average(p.get_optimize_time()) for p in ps]
@@ -192,6 +195,7 @@ def plot_times(ps: List[Parser]):
 
 	ax.legend([bar[0] for bar in bars], ('Sampling', 'Optimization (SLSQP)', 'Confirmation (PSI)'), frameon=False)
 
+	print(fig.get_size_inches())
 	plt.savefig(os.path.join(dir_path, 'figures/times.pdf'), bbox_inches='tight')
 	plt.clf()
 

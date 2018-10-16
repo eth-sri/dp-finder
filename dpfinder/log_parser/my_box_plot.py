@@ -31,6 +31,10 @@ from matplotlib import pyplot as plt
 from matplotlib import ticker
 import math
 
+# LATEX
+plt.rc('text', usetex=True)
+plt.rc('font', family='serif')
+
 
 def get_latex_formatter():
 
@@ -52,7 +56,8 @@ class MyBoxPlot:
 			rot_labels=30, rot_sub_labels=90,
 			height_ratios=[1.0],
 			y_axis_formatter=None,
-			y_axis_logscale=False):
+			y_axis_logscale=False,
+			figsize = None):
 
 		self.ranges = ranges
 		self.font_size = font_size
@@ -61,6 +66,7 @@ class MyBoxPlot:
 		self.height_ratios = height_ratios
 		self.y_axis_formatter = y_axis_formatter
 		self.y_axis_logscale = y_axis_logscale
+		self.figsize = figsize
 
 	def plot(self, data, labels, sublabels, bounds=None, y_label=None):
 		"""
@@ -74,7 +80,7 @@ class MyBoxPlot:
 
 		matplotlib.rcParams.update({'font.size': self.font_size})
 		fig, axes = plt.subplots(
-			n_splits, n, sharey='row', frameon=False, gridspec_kw={'height_ratios': self.height_ratios})
+			n_splits, n, sharey='row', frameon=False, gridspec_kw={'height_ratios': self.height_ratios}, figsize=self.figsize)
 		fig.subplots_adjust(wspace=0, hspace=0.1)
 
 		if n > 1 and n_splits > 1:
@@ -126,3 +132,5 @@ class MyBoxPlot:
 			for axs, bound in zip(axes, bounds):
 				for ax in axs:
 					ax.axhline(bound)
+
+		return fig
