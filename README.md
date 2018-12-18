@@ -80,6 +80,14 @@ To get a description of all parameters to dp-finder, run
 root@febda6ac8a18:/implementation# python3 dpfinder/searcher/search.py --help
 ````
 
+## Adding more algorithms
+
+To add a new algorithm `newAlg` for testing:
+
+- Add `newAlg.py` to [./dpfinder/algorithms/tf_implementations/imps](./dpfinder/algorithms/tf_implementations/imps). The new file should contain a class `NewAlgImpl` that extends `TensorFlowImplementation` (see [aboveThreshold.py](./dpfinder/algorithms/tf_implementations/imps/aboveThreshold.py) for a reference).
+- Add `newAlg.psi` to [./dpfinder/algorithms/psi_implementations](./dpfinder/algorithms/psi_implementations). See [aboveThreshold.psi](./dpfinder/algorithms/psi_implementations/aboveThreshold.psi) for a reference.
+- Add `newAlg.py` to [./dpfinder/algorithms/algs](./dpfinder/algorithms/algs). The new file should contain a class `NewAlg` that extends `Algorithm` (see [aboveThreshold.py](./dpfinder/algorithms/algs/aboveThreshold.py) for a reference).
+
 
 ## Citing This Framework
 

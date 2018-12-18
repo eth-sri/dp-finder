@@ -48,11 +48,20 @@ class Algorithm(ABC):
 
 	@abstractmethod
 	def get_random_input(self) -> Tuple[np.ndarray, np.ndarray]:
-		"""Return a tuple of (a,d)"""
+		"""
+		Return a tuple of (a,d), where a is the original database,
+		and d characterizes the distance to the neighbouring database
+		"""
 		pass
 
 	@abstractmethod
 	def get_random_output(self, a, b):
+		"""
+
+		:param a:
+		:param b:
+		:return: a random output to check for (can also be multiple values that parametrize an output set)
+		"""
 		pass
 
 	def get_psi_filename(self):

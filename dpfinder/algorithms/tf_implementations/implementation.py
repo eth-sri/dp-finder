@@ -84,18 +84,36 @@ class TensorFlowImplementation(ABC):
 
 	@abstractmethod
 	def get_randomness(self, n_samples):
+		"""
+		:param n_samples:
+		:return: a dictionary, where keys are the placeholders from prepare_randomness_placeholders,
+		         and values hold the randomness necessary to run the algorithm n_samples times
+		"""
 		pass
 
 	@abstractmethod
 	def estimate_internal(self, input, output):
+		"""
+
+		:param input:
+		:param output:
+		:return: the result for all n_samples runs of the checker function for input and output
+		"""
 		pass
 
 	@abstractmethod
 	def prepare_randomness_placeholders(self):
+		"""
+		prepare the tensorflow placeholders that hold the randomness needed to run the algorithm
+		:return:
+		"""
 		pass
 
 	@abstractmethod
 	def get_var_to_bounds(self, a, d, o):
+		"""
+		Get bounds for the variables limiting, e.g., the distance d between databases
+		"""
 		pass
 
 	def get_inequalities(self, a, d, o) -> List:
@@ -103,6 +121,11 @@ class TensorFlowImplementation(ABC):
 
 	@abstractmethod
 	def get_b(self, a, d) -> List:
+		"""
+		:param a: original database
+		:param d: distance
+		:return: the neighbouring database b from a and d
+		"""
 		pass
 
 	def build_fresh_graph(self):
