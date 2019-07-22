@@ -36,6 +36,10 @@ RUN apt-get update && apt-get install -y \
 # install virtualenv
 RUN pip3 install virtualenv
 
+# INSTALL latex (needed for some tests/plots)
+RUN apt-get update && apt-get install -y \
+	texlive-full
+
 # INSTALL PSI
 # dependencies
 RUN apt-get update && apt-get install -y \
@@ -61,5 +65,6 @@ RUN /implementation/prepare.sh
 # COPY prepared host information onto image
 COPY ./implementation /implementation
 
-# when starting the container, navigate to the correct directory
-ENTRYPOINT cd /implementation && /bin/bash
+# navigate to the correct directory
+WORKDIR /implementation
+

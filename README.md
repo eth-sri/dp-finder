@@ -5,7 +5,6 @@ by algorithms.
 
 This repository contains the code used for the experiments in the paper [https://www.sri.inf.ethz.ch/papers/ccs18-dpfinder.pdf](https://www.sri.inf.ethz.ch/papers/ccs18-dpfinder.pdf).
 
-
 ## Setup
 
 To install DP-Finder, you can use docker or install it locally. Before starting, clone this repository and navigate to the directory of this README file.
@@ -24,13 +23,20 @@ $ make launch # build and run the docker image
 
 Alternatively, you can set up DP-Finder on your local machine.
 The main requirements are
+
 ```shell
 $ sudo apt-get install python3 python3-pip python3-tk libboost-all-dev
+[...]
 $ pip3 install virtualenv
+[...]
+$ sudo apt-get install texlive-full
+[...]
 ```
 
-In addition, the DP-Finder requires [PSI](https://github.com/eth-sri/psi) (to confirm found violations exactly).
-Make sure that PSI can be accessed by running `psi`, by adding it to `/usr/local/bin`:
+In addition, the DP-Finder requires [PSI](https://github.com/eth-sri/psi) (to
+confirm found violations exactly). Make sure that PSI can be accessed by running
+`psi`, by adding it to `/usr/local/bin`. For example, assuming that `psi` was
+installed to `/opt/psi/psi`, run:
 
 ```shell
 ln -s -f "/opt/psi/psi" "/usr/local/bin"
@@ -38,7 +44,6 @@ ln -s -f "/opt/psi/psi" "/usr/local/bin"
 
 See the [Dockerfile](./docker/Dockerfile) for all relevant packages on for how to install PSI.
 In case of issues with the setup, also see the [preparation script](./prepare.sh) (which is automatically run when you run `./test.sh` or `./run.sh`), which contains some optional commands that may fix your errors.
-
 
 ## Getting Started
 
@@ -76,6 +81,7 @@ root@febda6ac8a18:/implementation# python3 dpfinder/searcher/search.py --alg abo
 ```
 
 To get a description of all parameters to dp-finder, run
+
 ````shell
 root@febda6ac8a18:/implementation# python3 dpfinder/searcher/search.py --help
 ````
@@ -87,7 +93,6 @@ To add a new algorithm `newAlg` for testing:
 - Add `newAlg.py` to [./dpfinder/algorithms/tf_implementations/imps](./dpfinder/algorithms/tf_implementations/imps). The new file should contain a class `NewAlgImpl` that extends `TensorFlowImplementation` (see [aboveThreshold.py](./dpfinder/algorithms/tf_implementations/imps/aboveThreshold.py) for a reference).
 - Add `newAlg.psi` to [./dpfinder/algorithms/psi_implementations](./dpfinder/algorithms/psi_implementations). See [aboveThreshold.psi](./dpfinder/algorithms/psi_implementations/aboveThreshold.psi) for a reference.
 - Add `newAlg.py` to [./dpfinder/algorithms/algs](./dpfinder/algorithms/algs). The new file should contain a class `NewAlg` that extends `Algorithm` (see [aboveThreshold.py](./dpfinder/algorithms/algs/aboveThreshold.py) for a reference).
-
 
 ## Citing This Framework
 
@@ -113,15 +118,13 @@ To add a new algorithm `newAlg` for testing:
 
 ## Contributors
 
-* [Benjamin Bichsel](https://www.sri.inf.ethz.ch/people/benjamin) benjamin.bichsel@inf.ethz.ch
-* [Timon Gehr](https://www.sri.inf.ethz.ch/people/timon) timon.gehr@inf.ethz.ch
-* [Dana Drachsler Cohen](https://www.sri.inf.ethz.ch/people/dana) dana.drachsler@inf.ethz.ch
-* [Petar Tsankov](http://www.ptsankov.com/) petar.tsankov@inf.ethz.ch
-* [Martin Vechev](https://www.sri.inf.ethz.ch/people/martin) martin.vechev@inf.ethz.ch
-
+- [Benjamin Bichsel](https://www.sri.inf.ethz.ch/people/benjamin) benjamin.bichsel@inf.ethz.ch
+- [Timon Gehr](https://www.sri.inf.ethz.ch/people/timon) timon.gehr@inf.ethz.ch
+- [Dana Drachsler Cohen](https://www.sri.inf.ethz.ch/people/dana) dana.drachsler@inf.ethz.ch
+- [Petar Tsankov](http://www.ptsankov.com/) petar.tsankov@inf.ethz.ch
+- [Martin Vechev](https://www.sri.inf.ethz.ch/people/martin) martin.vechev@inf.ethz.ch
 
 ## License and Copyright
 
-* Copyright (c) 2018 [Secure, Reliable, and Intelligent Systems Lab (SRI), ETH Zurich](https://www.sri.inf.ethz.ch/)
-* Licensed under the [MIT License](https://opensource.org/licenses/MIT)
-
+- Copyright (c) 2018 [Secure, Reliable, and Intelligent Systems Lab (SRI), ETH Zurich](https://www.sri.inf.ethz.ch/)
+- Licensed under the [MIT License](https://opensource.org/licenses/MIT)
