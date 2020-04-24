@@ -3,7 +3,8 @@
 DP-Finder is a system that automatically derives lower bounds on the differential privacy enforced
 by algorithms.
 
-This repository contains the code used for the experiments in the paper [https://www.sri.inf.ethz.ch/papers/ccs18-dpfinder.pdf](https://www.sri.inf.ethz.ch/papers/ccs18-dpfinder.pdf).
+This repository contains the code used for the experiments in the paper
+[https://files.sri.inf.ethz.ch/website/papers/ccs18-dpfinder.pdf](https://files.sri.inf.ethz.ch/website/papers/ccs18-dpfinder.pdf).
 
 ## Setup
 
