@@ -4,7 +4,7 @@ DP-Finder is a system that automatically derives lower bounds on the differentia
 by algorithms.
 
 This repository contains the code used for the experiments in the paper
-[https://files.sri.inf.ethz.ch/website/papers/ccs18-dpfinder.pdf](https://files.sri.inf.ethz.ch/website/papers/ccs18-dpfinder.pdf).
+[https://www.sri.inf.ethz.ch/publications/bichsel18dpfinder](https://www.sri.inf.ethz.ch/publications/bichsel18dpfinder).
 
 ## Setup
 
